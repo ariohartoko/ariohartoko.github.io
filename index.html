@@ -7,9 +7,16 @@
 <body>
 	<h1>Masukkan namamu</h1>
 	<input id="inputnama" value="">
-	<button type="submit" onclick="myFunction()">Submit</button>
+	<button id="submit" type="submit" onclick="myFunction()">Submit</button>
 
 <script>
+var input = document.getElementById("inputnama");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("submit").click();
+  }
+});
 function myFunction() {
 	var nama = document.getElementById("inputnama").value;
 	if (nama == "Fedora" || nama == "Fedora Aletheia Putri Leuwol") {
